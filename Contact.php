@@ -150,7 +150,7 @@
                     $message = "Ce message vous a été envoyé par votre Portfolio
                     Nom : ".$_POST["nom"]."
                     Email : ".$_POST["email"]."
-                    Message : ".$_POST["message"]."
+                    Message : ".$_POST["message"].""
                     $retour = mail("tristansifre@gmail.com",$_POST["sujet"],$_POST["message"], "From:trisif18@gmail.com"."\r\n"."Reply-to:".$_POST["email"]);
                     if ($retour === true){
                         echo "<p>L'email a bien été envoyé</p>"
