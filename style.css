@@ -552,9 +552,61 @@ footer{
 .postul{
     height: 100%;
     width: 100%;
-    position: relative;
 }
 
+form input, form textarea{
+    background: var(--blue_back);
+    width: 300px;
+    border-style: solid;
+    box-shadow: none;
+    display: block;
+    border-width: 1px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+    font-family: system-ui;
+    margin-left: 40%;
+}
+
+input::placeholder, textarea::placeholder{
+    color: var(--blue_write);
+}
+
+input:focus::placeholder, textarea:focus::placeholder{
+    color: var(--black_color);
+}
+
+input:focus , textarea:focus{
+    background: var(--white_color);
+}
+
+form textarea{
+    max-height: 200px;
+    max-width: 300px;
+    height: 200px;
+    width: 300px;
+    min-height: 175px;
+    min-width: 175px;
+}
+
+.push{
+    width: auto;
+    cursor: pointer;
+    color: var(--blue_write);
+    margin-left: 45%;
+}
+
+.input_1{
+    margin-top: 5%;
+}
+
+.push:hover, .push:hover::placeholder{
+    transform: scale(1.25);
+    transition: 0.4s;
+    background: var(--white_color);
+    color: var(--black_color);
+}
 
 /* .list{
     margin:100px auto 0;
