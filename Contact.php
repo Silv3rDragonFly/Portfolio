@@ -44,19 +44,24 @@
                     <span>A Propos de moi :</span>
                 </div>
                 <div class="haut3">
-                    <div class="haut2">
+                    <!-- <div class="haut2">
                         <div class="haut2bis"></div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="info-content">
-                <span>Je suis passioné d'informatique et blabla</span>
+                <div class="content_button">
+                    <button type="button" class="button button1" onclick="masquer_div('hidiv2');afficher_div('hidiv1')">Informations Diverse</button>
+                    <button type="button" class="button button2" onclick="masquer_div('hidiv1');afficher_div('hidiv2')">Compétences</button>
+                    <div id="hidiv1" class="other_information"> Coucou</div>
+                    <div id ="hidiv2" class="skills">Salut</div>
+                </div>
             </div>
             <div class="bottom_info">
                 <div class="bas1">
-                    <div class="bas2">
+                    <!-- <div class="bas2">
                         <div class="bas2bis"></div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="bas3">
                     
@@ -131,6 +136,28 @@
         </div>
     </section>
     <section class="sect4">
+            <div class="postul">
+                <div class="separate"></div>
+                <form method="post">
+                    <input type="text" class="input_1" name="nom" placeholder="Nom" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="sujet" placeholder="Sujet" required>
+                    <textarea name="message" placeholder="Contenue du message" required></textarea>
+                    <input type="submit" class="push" value="Envoyer le message">
+                </form>
+                <?php
+                if (isset($_POST["message"])){
+                    $message = "Ce message vous a été envoyé par votre Portfolio
+                    Nom : ".$_POST["nom"]."
+                    Email : ".$_POST["email"]."
+                    Message : ".$_POST["message"]."
+                    $retour = mail("tristansifre@gmail.com",$_POST["sujet"],$_POST["message"], "From:trisif18@gmail.com"."\r\n"."Reply-to:".$_POST["email"]);
+                    if ($retour === true){
+                        echo "<p>L'email a bien été envoyé</p>"
+                    }
+                }
+                ?>
+             </div>   
     </section>
     <script src = script.js>
     </script>
