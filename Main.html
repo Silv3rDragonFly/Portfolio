@@ -44,19 +44,24 @@
                     <span>A Propos de moi :</span>
                 </div>
                 <div class="haut3">
-                    <div class="haut2">
+                    <!-- <div class="haut2">
                         <div class="haut2bis"></div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="info-content">
-                <span>Je suis passioné d'informatique et blabla</span>
+                <div class="content_button">
+                    <button type="button" class="button button1" onclick="masquer_div('hidiv2');afficher_div('hidiv1')">Informations Diverse</button>
+                    <button type="button" class="button button2" onclick="masquer_div('hidiv1');afficher_div('hidiv2')">Compétences</button>
+                    <div id="hidiv1" class="other_information"> Coucou</div>
+                    <div id ="hidiv2" class="skills">Salut</div>
+                </div>
             </div>
             <div class="bottom_info">
                 <div class="bas1">
-                    <div class="bas2">
+                    <!-- <div class="bas2">
                         <div class="bas2bis"></div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="bas3">
                     
@@ -131,20 +136,16 @@
         </div>
     </section>
     <section class="sect4">
-        <form method="post">
-            <label>Votre email</label>
-            <input type="email" name="email" required><br>
-            <label>Message</label>
-            <textarea name="message" required></textarea><br>
-            <input type="submit">
-        </form>
-        <?php
-        if (isset($_POST['message'])) {
-            $retour = mail('destinataire@free.fr', 'Envoi depuis la page Contact', $_POST['message'], 'From: webmaster@monsite.fr' . "\r\n" . 'Reply-to: ' . $_POST['email']);
-            if($retour)
-                echo '<p>Votre message a bien été envoyé.</p>';
-        }
-        ?>
+            <div class="postul">
+                <div class="separate"></div>
+                <form method="post">
+                <label>Votre email</label>
+                <input type="email" name="email" required><br>
+                <label>Message</label>
+                <textarea name="message" required></textarea><br>
+                <input type="submit">
+                </form>
+             </div>   
     </section>
     <script src = script.js>
     </script>

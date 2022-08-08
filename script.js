@@ -108,6 +108,10 @@ let sectionpos;
 
 sectionpos = section.map(section => (section.offsetTop - navbar.offsetHeight))
 
+window.addEventListener("resize", ()=>{
+    sectionpos = section.map(section => (section.offsetTop))
+})
+
 navList.forEach(link => link.addEventListener("click", addScrollSmooth))
 
 function addScrollSmooth(e){
@@ -117,10 +121,6 @@ function addScrollSmooth(e){
         behavior: "smooth"
     })
 }
-
-window.addEventListener("resize", ()=>{
-    sectionpos = section.map(section => (section.offsetTop))
-})
 
 /*----------------------------------------------------- NavBar ---------------------------------------------------------------------*/
 
@@ -144,8 +144,17 @@ new ResizeObserver(entries =>{
     }
 }).observe(document.body)
 
+/*----------------------------------------------------- Affichage/Masquage des divs informations ---------------------------------------------------------------------*/
 
+function masquer_div(id)
+{
+  document.getElementById(id).style.display = 'none';
+}
 
+function afficher_div(id)
+{
+    document.getElementById(id).style.display = 'block';
+}
 
         // ParticleList.forEach(Particles => {
         //     var circle1 = {x: this.x , y:this.y,radius:this.size}
