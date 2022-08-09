@@ -11,7 +11,7 @@
 *, ::before , ::after{
 margin:0;
 padding:0;
-box-sizing:border-box;  
+box-sizing:border-box;
 }
 
 body{
@@ -159,6 +159,16 @@ footer{
     background: var(--blue_back);
     position: absolute;
     border-radius: 50px 50px 0 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+footer p{
+    position: relative;
+    margin-left: 2%;
+    font-family: "Lucida Console", Courier, monospace;
+    color: var(--black_color);
 }
 
 /************** Fond avec Bulles **************/
@@ -169,7 +179,7 @@ footer{
 }
 
 .cursor{
-    display: none;  
+    display: none;
 }
 
 .container_bubblecard:hover~.cursor{
@@ -216,7 +226,7 @@ footer{
     font-size: 80px;
     letter-spacing: 15px;
     animation: clignottement 1.2s linear infinite;
-    font-family: system-ui; 
+    font-family: system-ui;
 }
 
 @keyframes clignottement{
@@ -363,22 +373,31 @@ footer{
     position: absolute;
     height: 100%;
     width: 100%;
-    padding: 30px;
+    padding: 10px;
     border-radius: 8px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     flex-direction: column;
+    
+}
+
+.front-card{
+    background: var(--blue_back);
+}
+
+.image_container{
+    position: relative;
+    background: var(--white_color);
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.front-card{
-    background: yellow;
-}
-
 .back-card{
-    background: red;
+    background: var(--blue_back);
     transform: rotateY(180deg);
 }
 
@@ -414,15 +433,16 @@ footer{
     background: var(--blue_back);
     border-radius: 51px 0 51px 51px;
     float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .haut1 span{
-    color: var(--white_color);
+    color: var(--black_color);
     position: relative;
     font-weight: bold;
     font-size: 25px;
-    top: 50%;
-    left: 110%;
     z-index: 2;
 }
 
@@ -547,6 +567,15 @@ footer{
     border-radius: 51px 51px 51px 51px;
     position: relative;
     bottom: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separate p{
+    font-family: "Lucida Console",Courier, monospace;
+    font-size: 20px;
+    color: var(--black_color);
 }
 
 .postul{
