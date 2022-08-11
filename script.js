@@ -1,7 +1,7 @@
 /*----------------------------------------------------- Fond de Bulle ---------------------------------------------------------------------*/
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-let canvasrect = canvas.getBoundingClientRect(); 
+let canvasrect = canvas.getBoundingClientRect();
 
 const ParticleList = [];
 let nbParticle = Math.random() * 5+2;
@@ -12,7 +12,7 @@ canvas.height = canvas.offsetHeight;
 window.addEventListener('resize',()=>{
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    window.canvasrect = canvas.getBoundingClientRect(); 
+    window.canvasrect = canvas.getBoundingClientRect();
 })
 
 const mouse = {
@@ -24,7 +24,7 @@ canvas.addEventListener('click', (e)=>{
     mouse.x = e.x;
     mouse.y = e.y;
 
-    window.canvasrect = canvas.getBoundingClientRect(); 
+    window.canvasrect = canvas.getBoundingClientRect();
 
     for (let i=0 ; i<nbParticle; i++){
         ParticleList.push(new Particles())
@@ -126,23 +126,53 @@ function addScrollSmooth(e){
 
 const hamburger = document.querySelector('.hamburger');
 const navLinksContainer = document.querySelector('.navContainer');
+const nav = document.getElementById('nav');
 const ToggleNav = () => {
     hamburger.classList.toggle('open')
     const ariaToggle = hamburger.getAttribute
     ("aria-expanded") === "true" ? "false" : "true";
     hamburger.setAttribute("aria-expanded",ariaToggle)
     navLinksContainer.classList.toggle('open')
+    nav.classList.toggle('open_nav')
 }
+
 hamburger.addEventListener('click',ToggleNav)
-// window.addEventListener('click',ToggleNav)
 
 new ResizeObserver(entries =>{
     if(entries[0].contentRect.width <= 900){
-        navLinksContainer.style.transition = "transform 0.3s ease-out"
+        navLinksContainer.style.transition = "transform 0.3s ease-out";
     } else {
-        navLinksContainer.style.transition = "none"
+        navLinksContainer.style.transition = "none";
     }
 }).observe(document.body)
+
+// function nav_change(id)
+// {
+//     if (navLinksContainer.classList.toggle('open') === true)
+//     {
+//         document.getElementById(id).style.borderRadius = '0 12.5% 0 0';
+//     }
+//     else
+//     {
+//         document.getElementById(id).style.borderRadius = '0 12.5% 12.5% 0';
+//     }
+// }
+
+// function nav_change(id)
+// {
+//     if (document.getElementById(id).style.borderRadius = '0 12.5% 12.5% 0')
+//     {
+//         document.getElementById(id).style.borderRadius = '0 12.5% 0 0';
+//     }
+// }
+
+// function nav_reset(id)
+// {
+//     if (document.getElementById(id).style.borderRadius = '0 12.5% 0 0')
+//     {
+//         document.getElementById(id).style.borderRadius = '0 12.5% 12.5% 0';
+//     }
+// }
 
 /*----------------------------------------------------- Affichage/Masquage des divs informations ---------------------------------------------------------------------*/
 
@@ -154,6 +184,22 @@ function masquer_div(id)
 function afficher_div(id)
 {
     document.getElementById(id).style.display = 'block';
+}
+
+function color_change(id)
+{
+    if (document.getElementById(id).style.background = '#45A29E')
+    {
+        document.getElementById(id).style.background = '#C5C6C7';
+    }
+}
+
+function color_reset(id)
+{
+    if (document.getElementById(id).style.background = '#C5C6C7')
+    {
+        document.getElementById(id).style.background = '#45A29E';
+    }
 }
 
         // ParticleList.forEach(Particles => {

@@ -19,6 +19,7 @@ body{
     width: 100%;
     background:var(--gray_color);
     background: linear-gradient(112.5deg, var(--black_color) 0%, var(--gray_color) 65%);
+    font-family: "Lucida Console",Courier, monospace;
 }
 
 /************** NavBar & Haut de Page **************/
@@ -34,6 +35,7 @@ nav{
     padding: 15px 25px;
     height: 12vh;
     justify-content: center;
+    border-radius: 0 0 12.5% 12.5%;
 }
 
 .navContainer a{
@@ -78,79 +80,6 @@ section{
     display: none;
 }
 
-
-@media(max-width:900px){
-    nav{
-        padding: 15px 20px;
-        position: fixed;
-        width: 173px;
-        border-radius: 0 25% 0 0;
-    }
-    .navContainer{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        align-items: flex-start;
-        top:100%;
-        left: 0;
-        border-right: 1px solid rgba(50,50,50,0.25);
-        background: var(--blue_back);
-        transform: translate(-100%);
-        transition: transform 0.3s ease-out;
-        padding: 15px 50px 15px 20px;
-        height: 300px;
-        border-radius: 0 0 15% 0;
-    }
-    .hamburger{
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-        display: flex;
-        border: none;
-        background: var(--blue_back);
-        align-items: center;
-        position: relative;
-        order: 1;
-    }
-    .hamburger span{
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: var(--blue_write);
-        position: absolute;
-        pointer-events: none;
-        transition: opacity 0.3s 0.15s ease-out;
-    }
-    .hamburger span:nth-child(1){
-        transform: translateY(7px);
-        transition: transform 0.3s ease-out;
-    }
-    .hamburger span:nth-child(3){
-        transform: translateY(-7px);
-        transition: transform 0.3s ease-out;
-    }
-    .hamburger.open span:nth-child(1){
-        transform: translate(0) rotate(135deg);
-    }
-    .hamburger.open span:nth-child(2){
-        opacity: 0;
-        transition: opacity 0s ease-out;
-    }
-    .hamburger.open span:nth-child(3){
-        transform: translate(0) rotate(-135deg);
-    }
-    .open{
-        transform: translate(0%);
-    }
-    .navContainer a{
-        font-size: 18px;
-        margin: 10px 0;
-    }
-    .sect3{
-        height: 50%;
-    }
-}
-
 /************** Bas de Page **************/
 
 footer{
@@ -158,7 +87,7 @@ footer{
     height: 12vh;
     background: var(--blue_back);
     position: absolute;
-    border-radius: 50px 50px 0 0;
+    border-radius: 12.5% 12.5% 0 0;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -540,7 +469,7 @@ footer p{
     height: 30%;
     width: 20%;
     border-radius: 50px 50px 0 0;
-    background: var(--blue_back);
+    background: var(--white_color);
     transition: 0.4s;
     cursor: pointer;
     float: left;
@@ -548,10 +477,14 @@ footer p{
     position: relative;
     left:3.1%;
     border-style: none;
+    font-family: "Lucida Console",Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.button:focus{
-    background: var(--white_color);
+.button2{
+    margin-left: 10px;
+    background: var(--blue_back);
 }
 
 .button:hover{
@@ -583,23 +516,42 @@ footer p{
     width: 100%;
 }
 
+.formul{
+    width: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-left: 40%;
+}
+
 form input, form textarea{
     background: var(--blue_back);
-    width: 300px;
+    width: 100%;
     border-style: solid;
     box-shadow: none;
-    display: block;
+    display: flex;
     border-width: 1px;
     font-size: 15px;
     border-radius: 5px;
     margin-top: 20px;
     padding: 10px;
     font-family: system-ui;
-    margin-left: 40%;
+    max-width: 300px;
+    min-width: 175px;
+    position: relative;
+    justify-content: center;
+}
+
+form input::selection, form textarea::selection{
+    background: var(--blue_back);
 }
 
 input::placeholder, textarea::placeholder{
     color: var(--blue_write);
+    font-family: "Lucida Console",Courier, monospace;
+    font-style: italic;
 }
 
 input:focus::placeholder, textarea:focus::placeholder{
@@ -616,14 +568,15 @@ form textarea{
     height: 200px;
     width: 300px;
     min-height: 175px;
-    min-width: 175px;
+    min-width: 200px;
 }
 
 .push{
-    width: auto;
     cursor: pointer;
     color: var(--blue_write);
-    margin-left: 45%;
+    font-family: "Lucida Console",Courier, monospace;
+    max-width: 300px;
+    min-width: 175px;
 }
 
 .input_1{
@@ -635,6 +588,89 @@ form textarea{
     transition: 0.4s;
     background: var(--white_color);
     color: var(--black_color);
+}
+
+@media(max-width:900px){
+    nav{
+        padding: 15px 20px;
+        position: fixed;
+        width: 173px;
+        border-radius: 0 12.5% 12.5% 0;
+    }
+    .navContainer{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        align-items: flex-start;
+        top:100%;
+        left: 0;
+        border-right: 1px solid rgba(50,50,50,0.25);
+        background: var(--blue_back);
+        transform: translate(-100%);
+        transition: transform 0.3s ease-out;
+        padding: 15px 50px 15px 20px;
+        height: 200px;
+        border-radius: 0 0 12.5% 0;
+        width: 173px;
+    }
+    .hamburger{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        display: flex;
+        border: none;
+        background: var(--blue_back);
+        align-items: center;
+        position: relative;
+        order: 1;
+    }
+    .hamburger span{
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--blue_write);
+        position: absolute;
+        pointer-events: none;
+        transition: opacity 0.3s 0.15s ease-out;
+    }
+    .hamburger span:nth-child(1){
+        transform: translateY(7px);
+        transition: transform 0.3s ease-out;
+    }
+    .hamburger span:nth-child(3){
+        transform: translateY(-7px);
+        transition: transform 0.3s ease-out;
+    }
+    .hamburger.open span:nth-child(1){
+        transform: translate(0) rotate(135deg);
+    }
+    .hamburger.open span:nth-child(2){
+        opacity: 0;
+        transition: opacity 0s ease-out;
+    }
+    .hamburger.open span:nth-child(3){
+        transform: translate(0) rotate(-135deg);
+    }
+    .open{
+        transform: translate(0%);
+    }
+    .open_nav{
+        border-radius: 0 12.5% 0 0;
+    }
+    .navContainer a{
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .sect3{
+        height: 50%;
+    }
+    .button{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .formul{
+        margin-left: 20%;
+    }
 }
 
 /* .list{

@@ -7,7 +7,7 @@
 <body>
     <nav id="nav">
         <div class="main-navlinks">
-            <button class="hamburger" type="button" aria-label="Toogle navigation" aria-expanded="false">
+            <button class="hamburger" type="button" aria-label="Toogle navigation" aria-expanded="false" onclick="nav_change('nav')">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -51,8 +51,8 @@
             </div>
             <div class="info-content">
                 <div class="content_button">
-                    <button type="button" class="button button1" onclick="masquer_div('hidiv2');afficher_div('hidiv1')">Informations Diverse</button>
-                    <button type="button" class="button button2" onclick="masquer_div('hidiv1');afficher_div('hidiv2')">Compétences</button>
+                    <button type="button" id ="button1" class="button button1" onclick="masquer_div('hidiv2');afficher_div('hidiv1');color_change('button1');color_reset('button2')">Informations Diverse</button>
+                    <button type="button" id="button2" class="button button2" onclick="masquer_div('hidiv1');afficher_div('hidiv2');color_change('button2');color_reset('button1')">Compétences</button>
                     <div id="hidiv1" class="other_information"> Coucou</div>
                     <div id ="hidiv2" class="skills">Salut</div>
                 </div>
@@ -122,13 +122,15 @@
                 <div class="separate">
                     <p>Me Contacter</p>
                 </div>
-                <form method="post">
-                    <input type="text" class="input_1" name="nom" placeholder="Nom" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="sujet" placeholder="Sujet" required>
-                    <textarea name="message" placeholder="Contenue du message" required></textarea>
-                    <input type="submit" class="push" value="Envoyer le message">
-                </form>
+                <div class="formul">
+                    <form method="post">
+                        <input type="text" class="input_1" name="nom" placeholder="Nom" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="sujet" placeholder="Sujet" required>
+                        <textarea name="message" placeholder="Contenue du message" required></textarea>
+                        <input type="submit" class="push" value="Envoyer le message">
+                    </form>
+                </div>
                 <!-- <?php
                 if (isset($_POST["message"])){
                     $message = "Ce message vous a été envoyé par votre Portfolio
