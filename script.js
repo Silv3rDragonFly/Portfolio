@@ -13,13 +13,13 @@ window.addEventListener('resize',()=>{
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     window.canvasrect = canvas.getBoundingClientRect();
-})
+});
 
 const mouse = {
     x: undefined,
     y: undefined
-}
-
+};
+  
 canvas.addEventListener('click', (e)=>{
     mouse.x = e.x;
     mouse.y = e.y;
@@ -30,12 +30,33 @@ canvas.addEventListener('click', (e)=>{
         ParticleList.push(new Particles())
         nbParticle = Math.random() * 5+2;
     }
-})
+});
+
+// const depard = {
+//     x: undefined,
+//     y: undefined
+// };
+
+// window.addEventListener('load', (e)=>{
+//     depard.x = Math.random()*2;
+//     depard.y = Math.random()*2;
+//     console.log(depard.x, depard.y)
+
+//     console.log(Particles.depx, Particles.depy)
+//     console.log(Particles.x, Particles.y)
+
+//     for (let i=0 ; i<nbParticle; i++){
+//         ParticleList.push(new Particles())
+//         nbParticle = Math.random()*5+2;
+//     }
+// });
 
 class Particles{
     constructor(){
             this.x = mouse.x - window.canvasrect.left;
             this.y = mouse.y - window.canvasrect.top;
+            // this.depx = depard.x;
+            // this.depy = depard.y;
             this.size = Math.random()*20 + 10;
             this.speedX = Math.random()*4 - 1.5;
             this.speedY = Math.random()*4 - 1.5;
@@ -43,6 +64,8 @@ class Particles{
     update(){
         this.x +=this.speedX;
         this.y +=this.speedY;
+        // this.depx +=this.speedX;
+        // this.depy +=this.speedY;
 
         if(this.x + this.speedX > canvas.width - this.size || this.x + this.speedX < this.size){
             this.speedX = -this.speedX;
@@ -50,28 +73,36 @@ class Particles{
         if(this.y + this.speedY > canvas.height - this.size || this.y + this.speedY < this.size){
             this.speedY = -this.speedY;
         }
-    }
+        // if(this.depx + this.speedX > canvas.width - this.size || this.x + this.speedX < this.size){
+        //     this.speedX = -this.speedX;
+        // }
+        // if(this.depy + this.speedY > canvas.height - this.size || this.y + this.speedY < this.size){
+        //     this.speedY = -this.speedY;
+        // }
+    };
     draw(){
         ctx.beginPath();
         ctx.fillStyle = "#45A29E";
         ctx.arc(this.x,this.y,this.size,0,Math.PI * 2);
+        // ctx.arc(this.depx,this.depy,this.size,0,Math.PI * 2);
         ctx.fill();
         ctx.closePath();
-    }
-}
+    };
+};
 
 function handle(){
     for (let i=0; i < ParticleList.length; i++){
         ParticleList[i].draw();
         ParticleList[i].update();
-    }
-}
+    };
+};
 
 function animation(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
     handle();
     requestAnimationFrame(animation);
 }
+
 animation();
 
 /*----------------------------------------------------- Loader ---------------------------------------------------------------------*/
@@ -216,15 +247,7 @@ function color_reset(id)
         // })
 
 
-        // canvas.addEventListener('load', (e)=>{
-//     depard.x = e.x;
-//     depard.y = e.y;
 
-//     for (let i=0 ; i<nbParticle; i++){
-//         ParticleList.push(new Particles())
-//         nbParticle = Math.random()*5+2;
-//     }
-// })
 
 
 // const depard = {

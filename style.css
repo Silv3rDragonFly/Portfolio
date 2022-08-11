@@ -105,6 +105,7 @@ footer p{
     width: 100vw;
     height: 100vh;
     position: absolute;
+    cursor: none;
 }
 
 .cursor{
@@ -307,7 +308,6 @@ footer p{
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     flex-direction: column;
-    
 }
 
 .front-card{
@@ -325,9 +325,37 @@ footer p{
     align-items: center;
 }
 
+.image_container img{
+    height: 50%;
+    width: 20%;
+    position: relative;
+}
+
 .back-card{
     background: var(--blue_back);
     transform: rotateY(180deg);
+}
+
+.github_btn{
+    background: var(--blue_back);
+    height: 30%;
+    width: 15%;
+    border-radius: 8px 0 0 0;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.github_btn img{
+    position: relative;
+    height: 90%;
+    width: auto;
+    cursor: pointer;
+    left: 7.5%;
+    top: 5%;
 }
 
 /************** Information **************/
