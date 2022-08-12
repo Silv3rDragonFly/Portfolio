@@ -376,13 +376,24 @@ section{
     width: 75vw;
     background: var(--white_color);
     position: relative;
-    left: 2.5vw;
-    top: 2.5vh;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    top: -24%;
+    left: 3.1%;
 }
 
 .skills{
     display: none;
+}
+
+.other_information p{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button{
@@ -392,7 +403,7 @@ section{
     background: var(--white_color);
     transition: 0.4s;
     cursor: pointer;
-    float: left;
+    /* float: left; */
     top: -20%;
     position: relative;
     left:3.1%;
