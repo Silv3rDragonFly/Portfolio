@@ -348,7 +348,7 @@ section{
 }
 
 .info-content{
-    position: relative;
+    position: absolute;
     height: 60%;
     width: 100%;
     top: 20%;
@@ -365,7 +365,7 @@ section{
     width: 80vw;
     height: 40vh;
     background: var(--blue_back);
-    position: relative;
+    position: absolute;
     border-radius:10px;
     left: 10%;
     top: 20%;
@@ -377,9 +377,6 @@ section{
     background: var(--white_color);
     position: relative;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
     top: -24%;
     left: 3.1%;
@@ -389,11 +386,14 @@ section{
     display: none;
 }
 
-.other_information p{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.other_information p,.skills p{
+    position: absolute;
+    font-size: 17.5px;
+    top: 15%;
+}
+
+.other_information p::selection,.skills p::selection, br{
+    background: var(--blue_back);
 }
 
 .button{
@@ -403,7 +403,6 @@ section{
     background: var(--white_color);
     transition: 0.4s;
     cursor: pointer;
-    /* float: left; */
     top: -20%;
     position: relative;
     left:3.1%;
@@ -726,6 +725,9 @@ footer p{
     }
     .formul{
         margin-left: 20%;
+    }
+    .other_information p{
+        font-size: 11.5px;
     }
 }
 
