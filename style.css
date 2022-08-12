@@ -1,4 +1,4 @@
-/******************************************* Première page *****************************************************************/
+/******************************************* Corp de la Page *****************************************************************/
 
 :root{
     --blue_back: #45A29E;
@@ -20,106 +20,6 @@ body{
     background:var(--gray_color);
     background: linear-gradient(112.5deg, var(--black_color) 0%, var(--gray_color) 65%);
     font-family: "Lucida Console",Courier, monospace;
-}
-
-/************** NavBar & Haut de Page **************/
-
-nav{
-    background: var(--blue_back);
-    width: 100%;
-    position: fixed;
-    box-shadow: inset 0px -1px 0px rgba(50,50,50,0.25);
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    padding: 15px 25px;
-    height: 12vh;
-    justify-content: center;
-    border-radius: 0 0 12.5% 12.5%;
-}
-
-.navContainer a{
-    color: var(--blue_write);
-    margin: 0 10px;
-    font-size: 26px;
-    font-weight: 500;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-}
-
-.navContainer a::after{
-    content:"";
-    display: block;
-    position: absolute;
-    width: 100%;
-    bottom: -3px;
-    height: 1px;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-out;
-    background: var(--blue_write);
-}
-
-.navContainer a:hover::after{
-    transform:scaleX(1);
-}
-
-section{
-    height: 88vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sect1{
-    height: 100vh;
-}
-
-.hamburger{
-    display: none;
-}
-
-/************** Bas de Page **************/
-
-footer{
-    width: 100%;
-    height: 12vh;
-    background: var(--blue_back);
-    position: absolute;
-    border-radius: 12.5% 12.5% 0 0;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-footer p{
-    position: relative;
-    margin-left: 2%;
-    font-family: "Lucida Console", Courier, monospace;
-    color: var(--black_color);
-}
-
-/************** Fond avec Bulles **************/
-.container_bubblecard{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    cursor: none;
-}
-
-.cursor{
-    display: none;
-}
-
-.container_bubblecard:hover~.cursor{
-    display: block;
-}
-
-#canvas{
-    position: relative;
-    width: 100%;
-    height: 100%;
 }
 
 /************** Loader **************/
@@ -206,13 +106,93 @@ footer p{
     z-index: -1;
 }
 
+/************** NavBar & Haut de Page **************/
+
+nav{
+    background: var(--blue_back);
+    width: 100%;
+    position: fixed;
+    box-shadow: inset 0px -1px 0px rgba(50,50,50,0.25);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    height: 12vh;
+    justify-content: center;
+    border-radius: 0 0 12.5% 12.5%;
+}
+
+.navContainer a{
+    color: var(--blue_write);
+    margin: 0 10px;
+    font-size: 26px;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.navContainer a::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: -3px;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+    background: var(--blue_write);
+}
+
+.navContainer a:hover::after{
+    transform:scaleX(1);
+}
+
+.hamburger{
+    display: none;
+}
+
+section{
+    height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sect1{
+    height: 100vh;
+}
+
+/************** Fond avec Bulles **************/
+.container_bubblecard{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    cursor: none;
+}
+
+.cursor{
+    display: none;
+}
+
+.container_bubblecard:hover~.cursor{
+    display: block;
+}
+
+#canvas{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 /************** curseur modif **************/
 
 .cursor{
     height: 40px;
     width: 40px;
     cursor: none;
-    border: 1px dashed black;
+    border: 1px dashed var(--blue_back);
     border-radius: 50%;
     position: absolute;
     animation: curseur2 1s infinite alternate;
@@ -259,103 +239,6 @@ footer p{
     to{
         transform: scale(0.7) rotate(90deg);
     }
-}
-
-/************** carte des projets **************/
-
-.experience{
-    width: 100%;
-    height: 100%;
-}
-
-.card-container{
-    margin:100px auto 0;
-    padding: 0 20px;
-    max-width: 1300px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 350px);
-    grid-gap: 10px;
-    justify-content: center;
-    margin-bottom: 100px;
-}
-
-.card-wrapper{
-    position: relative;
-    min-height: 200px;
-    perspective: 2000px;
-    perspective-origin: bottom;
-}
-
-.card-wrapper:hover .card{
-    transform: rotateY(180deg);
-    cursor: pointer;
-}
-
-.card{
-    position: relative;
-    height: 100%;
-    width: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1.2s cubic-bezier(0.86,0,0.07,1);
-}
-
-.front-card, .back-card{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    flex-direction: column;
-}
-
-.front-card{
-    background: var(--blue_back);
-}
-
-.image_container{
-    position: relative;
-    background: var(--white_color);
-    border-radius: 8px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image_container img{
-    height: 50%;
-    width: 20%;
-    position: relative;
-}
-
-.back-card{
-    background: var(--blue_back);
-    transform: rotateY(180deg);
-}
-
-.github_btn{
-    background: var(--blue_back);
-    height: 30%;
-    width: 15%;
-    border-radius: 8px 0 0 0;
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.github_btn img{
-    position: relative;
-    height: 90%;
-    width: auto;
-    cursor: pointer;
-    left: 7.5%;
-    top: 5%;
 }
 
 /************** Information **************/
@@ -510,13 +393,110 @@ footer p{
     font-weight: bold;
 }
 
+.button:hover{
+    background: var(--white_color);
+}
+
 .button2{
     margin-left: 10px;
     background: var(--blue_back);
 }
 
-.button:hover{
+/************** Expériences **************/
+
+.experience{
+    width: 100%;
+    height: 100%;
+}
+
+.card-container{
+    margin:100px auto 0;
+    padding: 0 20px;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 350px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.card-wrapper{
+    position: relative;
+    min-height: 200px;
+    perspective: 2000px;
+    perspective-origin: bottom;
+}
+
+.card-wrapper:hover .card{
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+.card{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.86,0,0.07,1);
+}
+
+.front-card, .back-card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    flex-direction: column;
+}
+
+.front-card{
+    background: var(--blue_back);
+}
+
+.image_container{
+    position: relative;
     background: var(--white_color);
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_container img{
+    height: 50%;
+    width: 20%;
+    position: relative;
+}
+
+.back-card{
+    background: var(--blue_back);
+    transform: rotateY(180deg);
+}
+
+.github_btn{
+    background: var(--blue_back);
+    height: 30%;
+    width: 15%;
+    border-radius: 8px 0 0 0;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.github_btn img{
+    position: relative;
+    height: 90%;
+    width: auto;
+    cursor: pointer;
+    left: 7.5%;
+    top: 5%;
 }
 
 /************** Contact **************/
@@ -607,16 +587,39 @@ form textarea{
     min-width: 175px;
 }
 
-.input_1{
-    margin-top: 5%;
-}
-
 .push:hover, .push:hover::placeholder{
     transform: scale(1.25);
     transition: 0.4s;
     background: var(--white_color);
     color: var(--black_color);
 }
+
+.input_1{
+    margin-top: 5%;
+}
+
+
+/************** Bas de Page **************/
+
+footer{
+    width: 100%;
+    height: 12vh;
+    background: var(--blue_back);
+    position: absolute;
+    border-radius: 12.5% 12.5% 0 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+footer p{
+    position: relative;
+    margin-left: 2%;
+    font-family: "Lucida Console", Courier, monospace;
+    color: var(--black_color);
+}
+
+/************** Responsive et animation **************/
 
 @media(max-width:900px){
     nav{
@@ -700,6 +703,8 @@ form textarea{
         margin-left: 20%;
     }
 }
+
+/***************************************** Autre ***************************************/
 
 /* .list{
     margin:100px auto 0;
