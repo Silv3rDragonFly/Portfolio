@@ -116,13 +116,15 @@ window.addEventListener('load', ()=>{
 /*----------------------------------------------------- Cursor ---------------------------------------------------------------------*/
 
 const cursor = document.querySelector('.cursor');
+const cursor_text = document.getElementById('click_content')
 
 document.addEventListener('mousemove', (e) =>{
-    cursor.setAttribute('style','top:'+(e.pageY-20)+'px;left:'+(e.pageX-20)+'px')
+    cursor.setAttribute('style','top:'+(e.pageY-20)+'px;left:'+(e.pageX-20)+'px');
 })
 
 document.addEventListener('click', ()=>{
     cursor.classList.add('expand');
+    cursor_text.style.display = 'none';
     setTimeout(()=>{
         cursor.classList.remove("expand");
     },500);
@@ -176,34 +178,6 @@ new ResizeObserver(entries =>{
         navLinksContainer.style.transition = "none";
     }
 }).observe(document.body)
-
-// function nav_change(id)
-// {
-//     if (navLinksContainer.classList.toggle('open') === true)
-//     {
-//         document.getElementById(id).style.borderRadius = '0 12.5% 0 0';
-//     }
-//     else
-//     {
-//         document.getElementById(id).style.borderRadius = '0 12.5% 12.5% 0';
-//     }
-// }
-
-// function nav_change(id)
-// {
-//     if (document.getElementById(id).style.borderRadius = '0 12.5% 12.5% 0')
-//     {
-//         document.getElementById(id).style.borderRadius = '0 12.5% 0 0';
-//     }
-// }
-
-// function nav_reset(id)
-// {
-//     if (document.getElementById(id).style.borderRadius = '0 12.5% 0 0')
-//     {
-//         document.getElementById(id).style.borderRadius = '0 12.5% 12.5% 0';
-//     }
-// }
 
 /*----------------------------------------------------- Affichage/Masquage des divs informations ---------------------------------------------------------------------*/
 

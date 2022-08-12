@@ -212,6 +212,15 @@ section{
     border-radius: 50%;
 }
 
+#click_content{
+    width: 90px;
+    height: 20px;
+    color: var(--blue_back);
+    margin-bottom: 35px;
+    margin-left: 35px;
+    display: block;
+}
+
 .expand{
     animation: curseur1 5s;
     background: var(--blue_back);
@@ -455,7 +464,7 @@ section{
     background: var(--blue_back);
 }
 
-.image_container{
+.image_container, .infos_container{
     position: relative;
     background: var(--white_color);
     border-radius: 8px;
@@ -464,6 +473,11 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.infos_container{
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .image_container img{
