@@ -122,12 +122,15 @@ document.addEventListener('mousemove', (e) =>{
     cursor.setAttribute('style','top:'+(e.pageY-20)+'px;left:'+(e.pageX-20)+'px');
 })
 
-document.addEventListener('click', ()=>{
+canvas.addEventListener('click', ()=>{
     cursor.classList.add('expand');
-    cursor_text.style.display = 'none';
     setTimeout(()=>{
         cursor.classList.remove("expand");
     },500);
+})
+
+canvas.addEventListener('click',()=>{
+    cursor_text.style.display = 'none';
 })
 
 /*----------------------------------------------------- Smooth Scroll ---------------------------------------------------------------------*/
@@ -160,6 +163,7 @@ function addScrollSmooth(e){
 const hamburger = document.querySelector('.hamburger');
 const navLinksContainer = document.querySelector('.navContainer');
 const nav = document.getElementById('nav');
+
 const ToggleNav = () => {
     hamburger.classList.toggle('open')
     const ariaToggle = hamburger.getAttribute
@@ -167,6 +171,10 @@ const ToggleNav = () => {
     hamburger.setAttribute("aria-expanded",ariaToggle)
     navLinksContainer.classList.toggle('open')
     nav.classList.toggle('open_nav')
+    // if(nav.classList.contains('open_nav') && document.addEventListener('click'))
+    // {
+    //     nav.classList.remove('open_nav');
+    // }
 }
 
 hamburger.addEventListener('click',ToggleNav)
@@ -218,24 +226,6 @@ function turn_card(id)
     }
     document.getElementById(id).classList.add('turn');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

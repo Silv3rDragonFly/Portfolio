@@ -55,7 +55,7 @@ body{
     color: #484848;
     font-size: 80px;
     letter-spacing: 15px;
-    animation: clignottement 1.2s linear infinite;
+    animation: clignottement 2s linear infinite;
     font-family: system-ui;
 }
 
@@ -382,10 +382,6 @@ section{
     left: 3.1%;
 }
 
-.skills{
-    display: none;
-}
-
 .other_information p,.skills p{
     position: absolute;
     font-size: 17.5px;
@@ -421,6 +417,44 @@ section{
     background: var(--blue_back);
 }
 
+.skills{
+    display: none;
+}
+
+.skills_container{
+    margin:10px auto 0;
+    padding: 0 20px;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.skills_item{
+    background: var(--blue_back);
+    min-height: 100px;
+    padding: 5px;
+    color: var(--white_color);
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills_item img{
+    position: relative;
+    height: 75%;
+    width: 90%;
+    border-radius: 8px;
+    top: -10%;
+}
+
+.skills_item p{
+    top: 80%;
+}
+
 /************** Expériences **************/
 
 .experience{
@@ -429,14 +463,13 @@ section{
 }
 
 .card-container{
-    margin:100px auto 0;
+    margin: 200px auto;
     padding: 0 20px;
     max-width: 1300px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 350px);
     grid-gap: 100px;
     justify-content: center;
-    margin-bottom: 100px;
 }
 
 .card-wrapper{
@@ -467,6 +500,7 @@ section{
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .front-card{
@@ -648,8 +682,9 @@ footer p{
     nav{
         padding: 15px 20px;
         position: fixed;
-        width: 173px;
+        width: 150px;
         border-radius: 0 12.5% 12.5% 0;
+        transition: border-radius 0.3s;
     }
     .navContainer{
         display: flex;
@@ -665,7 +700,7 @@ footer p{
         padding: 15px 50px 15px 20px;
         height: 200px;
         border-radius: 0 0 12.5% 0;
-        width: 173px;
+        width: 150px;
     }
     .hamburger{
         width: 20px;
@@ -710,6 +745,7 @@ footer p{
     }
     .open_nav{
         border-radius: 0 12.5% 0 0;
+        transition: border-radius 0.3s;
     }
     .navContainer a{
         font-size: 18px;
@@ -724,9 +760,14 @@ footer p{
     }
     .formul{
         margin-left: 20%;
+        margin-bottom: 5%;
     }
     .other_information p{
         font-size: 11.5px;
+    }
+    .card-container{
+        margin: 50px auto;
+        grid-gap: 50px;
     }
 }
 
