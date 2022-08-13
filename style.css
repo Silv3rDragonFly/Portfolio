@@ -434,7 +434,7 @@ section{
     max-width: 1300px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 350px);
-    grid-gap: 10px;
+    grid-gap: 100px;
     justify-content: center;
     margin-bottom: 100px;
 }
@@ -446,12 +446,11 @@ section{
     perspective-origin: bottom;
 }
 
-.card-wrapper:hover .card{
+.turn{
     transform: rotateY(180deg);
-    cursor: pointer;
 }
 
-.card{
+#card, #card1, #card2{
     position: relative;
     height: 100%;
     width: 100%;
@@ -485,14 +484,14 @@ section{
     align-items: center;
 }
 
-.infos_container{
+/* .infos_container{
     overflow: scroll;
     overflow-x: hidden;
-}
+} */
 
 .image_container img{
-    height: 50%;
-    width: 20%;
+    height: 100%;
+    width: 100%;
     position: relative;
 }
 

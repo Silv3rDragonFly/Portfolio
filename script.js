@@ -207,6 +207,38 @@ function color_reset(id)
     }
 }
 
+/*----------------------------------------------------- Tourner les cartes expériences ---------------------------------------------------------------------*/
+
+function turn_card(id)
+{
+    if(document.getElementById(id).classList.contains('turn'))
+    {
+        document.getElementById(id).classList.remove('turn');
+        document.getElementById(id).style.display('none');
+    }
+    document.getElementById(id).classList.add('turn');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // ParticleList.forEach(Particles => {
         //     var circle1 = {x: this.x , y:this.y,radius:this.size}
         //     var circle2 = {x: this.x , y:this.y,radius:this.size}
