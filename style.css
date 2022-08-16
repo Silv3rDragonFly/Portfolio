@@ -443,6 +443,11 @@ section{
     align-items: center;
 }
 
+.skills_item:hover{
+    transform: scale(1.25);
+    transition: transform 0.5s ease-out;
+}
+
 .skills_item img{
     position: relative;
     height: 75%;
